@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import HeaderComponent from './components/Header.component';
+import FormComponent from './components/Form.component';
 
 
 
 function App() {
   return (
-      <h1>Newshello.com</h1>
+    <>
+      <HeaderComponent
+        title='NewsSearcher.com'
+      />
+
+      <div className="container white">
+              <FormComponent/>
+      </div>
+
+
+    </>
   );
 }
 
