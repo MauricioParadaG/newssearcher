@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const useSelect = (inicialState, optionsFiat) => {
+const useSelect = (inicialState, optionsCategories) => {
 
-    const [state, setState] = useState('');
+    const [state, setState] = useState(inicialState);
 
     const SelectNews = () => (
           <select
@@ -10,8 +10,11 @@ const useSelect = (inicialState, optionsFiat) => {
             onChange={event => setState(event.target.value)}
             value={state}
           >
-            <option value="">- Select -</option>
-            
+
+            {optionsCategories.map(option => (
+              <option key={option.value} value={option.value}>{option.label}</option>
+            ))}
+
           </select>
     );
 
